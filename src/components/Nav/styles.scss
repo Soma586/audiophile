@@ -1,0 +1,22 @@
+
+@import '../../scss/colors.scss';
+.navContainer {
+
+    background-color: $dark;
+    color: $white;
+    padding-top: 36px;
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid $grey;
+}
+
+.cart {
+    width: 24px;
+    height: 16px;
+}
+
+.navList {
+
+    width: 480px;
+
+}
