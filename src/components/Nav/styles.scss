@@ -1,5 +1,6 @@
 
 @import '../../scss/colors.scss';
+@import '../../scss/breakpoint.scss';
 .navContainer {
 
     background-color: $dark;
@@ -8,6 +9,7 @@
     padding-bottom: 20px;
 
     border-bottom: 1px solid $grey;
+    position: relative;
 }
 
 .cart {
@@ -25,3 +27,23 @@
 .test:hover {
     color: red
 }
+
+
+.navDropDown {
+    min-height: 340px;
+    width: 100%;
+    background-color: blue;
+    position: absolute;
+    left: 0;
+    z-index: -10;
+    border-radius: 12px;
+
+
+    @include breakpoint-md {
+    padding-top: 130px;
+    }
+}
+
+// .accBuff {
+//     position: ;
+// }

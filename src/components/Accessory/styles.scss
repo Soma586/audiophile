@@ -1,0 +1,75 @@
+@import '../../scss/colors.scss';
+@import '../../scss/breakpoint.scss';
+
+.accessCard {
+
+
+
+    background-color: $grey;
+    text-align: center;
+    position: relative;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 65px;
+  
+
+
+    @include breakpoint-md {
+    width : 223px;
+    height: 217px;
+    margin-top: 0;
+    
+
+    }
+
+    // width: 350px;
+    // height: 203px;
+
+    @include breakpoint-lg {
+    
+    width: 350px;
+    height: 203px;
+    // text-align: center;
+    //position: relative;
+    
+    
+    }
+}
+
+.accImage {
+
+    object-fit: contain;
+
+    width: 180px;
+    height: 180px;
+    @include breakpoint-md {
+    width: 240px;
+    height: 240px;
+    
+    }
+    
+}
+
+.imgContainer {
+
+
+    margin-top: -50px;
+
+    @include breakpoint-md {
+        margin-top: -80px;
+    }
+
+    @include breakpoint-lg {
+    margin-top: -100px;
+    }
+    // position: absolute;
+    // top: -90px;
+    // right: 60px;
+}
+
+.accBottom {
+    // position: absolute;
+    // bottom: 0px;
+    // right: 88px
+    margin-top: -20px;
+}
