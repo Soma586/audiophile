@@ -6,7 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import './assets/Manrope/static/Manrope-Regular.ttf';
 import './assets/Manrope/static/Manrope-Bold.ttf';
 import './assets/Manrope/static/Manrope-Medium.ttf'
-import 'bootstrap/dist/css/bootstrap.css';
+//import 'bootstrap/dist/css/bootstrap.css';
+import '../src/scss/main.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

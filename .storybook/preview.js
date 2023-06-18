@@ -1,6 +1,7 @@
 /** @type { import('@storybook/react').Preview } */
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
+import '../src/scss/main.scss'
 import '../src/scss/typography.scss';
 import '../src/index.css';
 
