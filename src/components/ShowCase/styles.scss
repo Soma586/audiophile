@@ -1,0 +1,97 @@
+@import '../../scss/breakpoint.scss';
+
+.firstContainer {
+
+
+    text-align: center;
+
+    height: 700px;
+    border-radius: 4px;
+
+    @include breakpoint-md {
+        height: 720px;
+    }
+
+
+    @include breakpoint-lg {
+    height: 500px;
+    position: relative;
+
+    }
+    //padding-right: 550px;
+    
+}
+
+.firstImage {
+
+    width: 198px;
+    height: 237px;
+   
+   
+    clip: rect(0px, 305px, 370px, 0px);
+    position: relative;
+    top: 60px;
+
+    @include breakpoint-lg {
+        width:  305px;
+        height: 376px;
+       
+    
+    position: absolute;
+    top: 130px;
+    bottom: -6px;
+    left: 300px;
+    
+    }
+
+}
+
+.testxx {
+    //text-align: center;
+}
+
+.circle {
+    
+
+    position: relative;
+    top: -500px;
+    left: -15px;
+    margin: auto;
+    @include breakpoint-lg { 
+        position: static;
+       
+
+    }
+
+
+}
+
+.firstDesc {
+
+    width: 349px;
+    height: 303px;
+    position: absolute;
+    bottom: 0;
+    top: 50%;
+    left: 50%;
+    //right: 0;
+    transform: translate(-50%, -50%);
+    margin-top: 110px;
+
+
+    text-align: center;
+
+
+    @include breakpoint-lg {
+        // position: relative;
+        transform: none;
+        top: 0;
+        left: initial;
+        //right: 0;
+        //position: static;
+    
+   
+    right: 140px;
+    top: 25px
+    }
+}

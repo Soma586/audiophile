@@ -1,10 +1,16 @@
 import './styles.scss'
+import classNames from 'classnames';
 
 
-const CallToAction = () => {
+const CallToAction = (props) => {
 
+
+    const {
+        bgcolor = 'orange',
+        textcolor = 'white'
+    } = props;
     return (
-        <button className="bg-orange ctaContainer text-white" >
+        <button className={classNames(`bg-${bgcolor} ctaContainer text-${textcolor}`)} >
             SEE PRODUCT
         </button>
     )
