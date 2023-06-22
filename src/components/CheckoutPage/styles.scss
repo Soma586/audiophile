@@ -1,0 +1,42 @@
+@import '../../scss/colors.scss';
+@import '../../scss/breakpoint.scss';
+
+.checkoutDetails {
+    
+    border-radius: 4px;
+    border: solid 1px red;
+
+    padding: 62px 24px;
+    margin-bottom: 15px;
+
+
+    @include breakpoint-lg {
+        padding: 62px 52px;
+        // width: 730px;
+    }
+
+}
+
+input {
+
+    border-radius: 4px;
+    border: solid 1px $grey;
+    width: 100%;
+
+    padding: 12px 15px;
+}
+
+.summaryContainer {
+
+    padding: 15px 15px;
+    border: solid 1px red;
+    border-radius: 4px;
+
+
+
+    @include breakpoint-lg {
+        //width: 350px;
+    }
+
+
+}
