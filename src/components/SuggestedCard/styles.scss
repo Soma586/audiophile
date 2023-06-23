@@ -1,0 +1,28 @@
+@import '../../scss/breakpoint.scss';
+
+.suggestCard {
+
+
+
+    height: 471px;
+
+    text-align: center;
+    width: 100%;;
+
+
+    @include breakpoint-sm {
+        width: 223px;
+    }
+
+    @include breakpoint-lg {
+        width: 350px;
+    }
+   
+}
+
+.cardImage {
+    width: 100%;
+    height: 318px;
+    border-radius: 4px;
+
+}
