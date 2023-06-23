@@ -12,14 +12,14 @@ const HomePage = () => {
     return (
         <div>
             <HeroHome/>
-            <div className="bufferAccessory">
+            <div className="bufferAccessory container">
             <Accessory/>
             </div>
             <div className="bufferShowCase ">
 
             <ShowCase/>
             </div>
-            {/* <Bestgear/> */}
+            <Bestgear/>
             
 
         </div>
