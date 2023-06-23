@@ -1,109 +1,159 @@
-
-import { useState } from 'react'
-import './styles.scss'
-
-
-
-
+import { useState } from "react";
+import "./styles.scss";
 
 const SummaryCheck = () => {
-    
-    return (
-        <div className="summaryContainer col-lg-4 ">
+  return (
+    <div className="summaryContainer">
+      <h2 className="type__H6">SUMMARY</h2>
 
-            <h2>
-                SUMMARY
-            </h2>
+      <div className="d-flex justify-content-between type__body">
+        <p>TOTAL</p>
 
-            <div className="d-flex justify-content-between">
-                <p>TOTAL</p>
+        <p className="boldP">$ 5,396</p>
+      </div>
 
-                <p>$ 5,396</p>
+      <div className="d-flex justify-content-between type__body">
+        <p>SHIPPING</p>
 
-            </div>
+        <p className="boldP">$ 50</p>
+      </div>
 
-            <div className="d-flex justify-content-between">
-                <p>SHIPPING</p>
+      <div className="d-flex justify-content-between type__body">
+        <p>GRAND TOTAL</p>
 
-                <p>$ 50</p>
+        <p className="boldP">$ 5,396</p>
+      </div>
 
-            </div>
-
-            <div className="d-flex justify-content-between">
-                <p>GRAND TOTAL</p>
-
-                <p>$ 5,396</p>
-
-            </div>
-
-        </div>
-    )
-}
+      <button className="checkoutButton bg-orange text-white">
+        CONTINUE & PAY
+      </button>
+    </div>
+  );
+};
 
 const CheckoutPage = () => {
 
-    return(
-        <div className="container">
-            <div className="row g-3">
-            <div className="checkoutDetails col-lg-8">
-                <h1>CHECKOUT</h1>
+
+    const [emailValue,  setEmail] = useState('')
+    const [isValidEmail, setValidEmail] = useState(true)
+    const [num, setnum] = useState('')
 
 
-                <p>BILLING DETAILS</p>
+    const handleEmailChange = (event) => {
+
+        setEmail(event.target.value)
+    }
+
+    const valideEmail = (email) => {
 
 
-                <label>
-                    Name
-                </label>
-                <input placeholder="Alexel Ward"/>
+        if(String(email)
+        .toLowerCase()
+        .match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        )){
+            return true;
+        }else{{
+            return false
+        }}
 
-                <label>
-                    Email Address
-                </label>
-                <input placeholder="alexel@mail.com"/>
+   
 
-                <label>
-                    Phone Number
-                </label>
-                <input placeholder="+1 202 555-0136"/>
+    }
 
+    const phone = (event) => {
 
-                <p>SHIPPING INFO</p>
-
-                <label>
-                    Your Address
-                </label>
-                <input placeholder="1137 Willams Avenue"/>
-
-                <label>
-                    ZIP Code
-                </label>
-                <input placeholder="10011"/>
-
-                <label>
-                    City
-                </label>
-                <input placeholder="New York"/>
-
-                <label>
-                    Country
-                </label>
-                <input placeholder="United States"/>
+        console.log(event.target.value)
+        setnum(event.target.value)
+    }
 
 
+    const test = () => {
+        
+
+        if(emailValue !== ''){
+
+            // if(!valideEmail(emailValue)){
+            //     console.log("not a valid email")
+            // }
+            setValidEmail(valideEmail(emailValue))
+        }
+    }
 
 
+  return (
+    <div className="container">
+      <div className="row gx-3">
+        <div className="col-lg-8">
+          <div className="checkoutDetails ">
+            <h2 className="type__H3">CHECKOUT</h2>
 
+            <p className="subTitle text-orange">BILLING DETAILS</p>
 
+            <div className="d-md-flex  flex-wrap justify-content-between">
+              <div className="inputfield mb-3">
+                <label className="type__body">Name</label>
+                <input className="type__body" placeholder="Alexel Ward" />
+              </div>
+
+              <div className="inputfield mb-3">
+                  <div className="d-flex justify-content-between">
+                <label className="type__body">Email Address</label>
+
+                {!isValidEmail && 
+                <label className="type__body error">Wrong format</label>
+                }
+                </div>
+                <input className="type__body" 
+                placeholder="alexel@mail.com" 
+                onBlur={test}
+                onChange={handleEmailChange}
+                value={emailValue}
+                
+                />
+              </div>
+
+              <div className="inputfield mb-3">
+                <label className="type__body">Phone Number</label>
+                <input className="type__body" 
+                placeholder="+1 202 555-0136" 
+                onChange={phone}
+                value={num}
+                
+                />
+              </div>
             </div>
 
+            <p className="subTitle text-orange">SHIPPING INFO</p>
 
-            <SummaryCheck/>
+            <label className="type__body">Address</label>
+            <input className="type__body mb-3" placeholder="1137 Willams Avenue" />
+
+            <div className="d-md-flex  flex-wrap justify-content-between ">
+              <div className="inputfield mb-3">
+                <label className="type__body">ZIP Code</label>
+                <input className="type__body" type="number" placeholder="10011" />
+              </div>
+
+              <div className="inputfield mb-3">
+                <label className="type__body">City</label>
+                <input className="type__body" placeholder="New York" />
+              </div>
+
+              <div className="inputfield">
+                <label className="type__body">Country</label>
+                <input className="type__body" placeholder="United States" />
+              </div>
             </div>
-
+          </div>
         </div>
-    )
-}
 
+        <div className="col-lg-4">
+          <SummaryCheck />
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default CheckoutPage
+export default CheckoutPage;

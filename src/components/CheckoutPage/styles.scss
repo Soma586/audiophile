@@ -40,3 +40,44 @@ input {
 
 
 }
+
+.checkoutButton {
+
+    
+        border-style: none;
+        width: 100%;
+        padding: 8px 30px
+    
+    
+
+}
+
+.inputfield {
+    //width: 309px;
+
+    
+    @include breakpoint-md {
+    width: 300px;
+
+    }
+    @include breakpoint-lg {
+        width: 250px;
+    
+    }
+
+    @include breakpoint-xl {
+        width: 309px;
+    }
+}
+
+.billContainer {
+
+}
+
+.boldP {
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+}
