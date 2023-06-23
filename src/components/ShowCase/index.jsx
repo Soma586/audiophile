@@ -78,7 +78,8 @@ const SecondContainer = () => {
 
 const ThirdContainer = () => {
   return (
-    <div className="d-md-flex thirdContainer justify-content-md-between">
+    <div className="row">
+        <div className="col-md-6">
       <div className="d-none d-lg-block ">
         <img className="thirdImg" src={YX1} />
       </div>
@@ -90,11 +91,14 @@ const ThirdContainer = () => {
       <div className="d-md-none">
         <img className="thirdImg" src={mobileYX1} />
       </div>
+      </div>
 
+<div className="col-md-6">
       <div className="thirdDesc bg-grey">
         <h3 className="mb-4">YX1 EARPHONES</h3>
 
         <CallToAction />
+      </div>
       </div>
     </div>
   );

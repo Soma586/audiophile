@@ -148,12 +148,12 @@
 
   @include breakpoint-lg {
     //width: 540px;
-    width: 90%;
+    width: 100%;
     // ;
   }
 
   @include breakpoint-xl {
-    width: 110%;
+    //width: 110%;
   }
 }
 
@@ -165,11 +165,12 @@
 
   @include breakpoint-md {
     width: 339px;
+    height: 320px;
   }
   @include breakpoint-lg {
     //min-width: 540px;
     //width: 540px;
-    width: 50%;
+    width: 100%;
     padding-top: 120px;
     padding-left: 100px;
     height: 320px;
