@@ -2,6 +2,7 @@ import './styles.scss'
 import HeroHome from "../../components/Hero";
 import Accessory from "../../components/Accessory";
 import ShowCase from '../../components/ShowCase';
+import Bestgear from '../../components/Bestgear';
 
 
 
@@ -16,8 +17,9 @@ const HomePage = () => {
             </div>
             <div className="bufferShowCase ">
 
-            {/* <ShowCase/> */}
+            <ShowCase/>
             </div>
+            {/* <Bestgear/> */}
             
 
         </div>

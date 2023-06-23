@@ -5,6 +5,8 @@
 
   height: 700px;
   border-radius: 4px;
+  position: relative;
+//   width: 100%;
 
   @include breakpoint-md {
     height: 720px;
@@ -12,7 +14,7 @@
 
   @include breakpoint-lg {
     height: 500px;
-    position: relative;
+    
   }
   //padding-right: 550px;
 }
@@ -24,6 +26,7 @@
   clip: rect(0px, 305px, 370px, 0px);
   position: relative;
   top: 60px;
+  z-index: 1;
 
   @include breakpoint-lg {
     width: 305px;
@@ -32,7 +35,12 @@
     position: absolute;
     top: 130px;
     bottom: -6px;
-    left: 300px;
+    left: 100px;
+  }
+
+
+  @include breakpoint-xl {
+      left: 300px;
   }
 }
 
@@ -41,10 +49,36 @@
 }
 
 .circle {
+
+    width: 100%;
   position: relative;
-  top: -500px;
-  left: -15px;
   margin: auto;
+
+
+  top: -280px;
+  //z-index: -10;
+ 
+
+
+  @include breakpoint-sm {
+
+    // top: 332px;
+    // left: 2px;
+    top: -315px;
+    left: 2px;
+
+  }
+
+  @include breakpoint-md {
+    top: -390px;
+    left: -15px;
+     
+  }
+
+
+
+ 
+  
   @include breakpoint-lg {
     position: static;
   }
@@ -59,7 +93,7 @@
   left: 50%;
   //right: 0;
   transform: translate(-50%, -50%);
-  margin-top: 264px;
+  margin-top: 190px;
 
   text-align: center;
 
