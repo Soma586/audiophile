@@ -38,6 +38,9 @@ const CheckoutPage = () => {
     const [isValidEmail, setValidEmail] = useState(true)
     const [num, setnum] = useState('')
 
+    console.log("checking session")
+    console.log(sessionStorage.getItem('pimp'))
+
 
     const handleEmailChange = (event) => {
 

@@ -8,6 +8,7 @@ import tabletYX1 from "../../assets/home/tablet/image-earphones-yx1.jpg";
 import mobileYX1 from "../../assets/home/mobile/image-earphones-yx1.jpg";
 import Circle from "../../assets/home/desktop/pattern-circles.svg";
 import CallToAction from "../Cta";
+import { Route ,Link } from 'react-router-dom';
 
 const FirstContainer = () => {
   return (
@@ -24,7 +25,10 @@ const FirstContainer = () => {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
+
+          <Link to="zx9-speaker">
           <CallToAction bgcolor="black" />
+          </Link>
         </div>
       </div>
 
@@ -40,7 +44,9 @@ const FirstContainer = () => {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
+          <Link to="zx9-speaker">
           <CallToAction bgcolor="black" />
+          </Link>
         </div>
       </div>
     </div>
@@ -54,10 +60,14 @@ const SecondContainer = () => {
         <h3 className="mb-4">ZX7 SPEAKER</h3>
 
         <div className="d-none d-md-block">
+            <Link to="zx7-speaker">
           <CallToAction bgcolor="black" />
+          </Link>
         </div>
         <div className="d-md-none">
+            <Link to="zx7-speaker">
           <CallToAction bgcolor="grey" />
+          </Link>
         </div>
       </div>
 
@@ -96,8 +106,10 @@ const ThirdContainer = () => {
 <div className="col-md-6">
       <div className="thirdDesc bg-grey">
         <h3 className="mb-4">YX1 EARPHONES</h3>
-
+        
+        <Link to="yx1-earphones">
         <CallToAction />
+        </Link>
       </div>
       </div>
     </div>

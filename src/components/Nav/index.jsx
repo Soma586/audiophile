@@ -4,6 +4,7 @@ import Cart from '../../assets/shared/desktop/icon-cart.svg'
 import {ReactComponent as HamburgerIcon} from '../../assets/shared/tablet/icon-hamburger.svg'
 import { useState } from 'react'
 import Accessory from '../Accessory'
+import { Route ,Link } from 'react-router-dom'
 
 
 
@@ -20,12 +21,17 @@ const Nav = () => {
             <span className="type__H6">Audiophile</span>
             
             <div className="d-flex justify-content-between type__H6 navList">
+                <Link to="/">
                 <p>HOME</p>
+                </Link>
                 <p>HEADPHONES</p>
                 <p>SPEAKERS</p>
                 <p>EARPHONES</p>
             </div>
-            <img className="cart" src={Cart}/>
+            
+            <Link to={"checkout"}>
+                <img className="cart" src={Cart}/>
+            </Link>
             </div>
 
             {/* tablet view */}
