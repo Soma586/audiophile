@@ -14,7 +14,7 @@ const Nav = () => {
     const [displayMenu, setDisplayMenu] = useState(false)
 
     return(
-        <div className="container navContainer ">
+        <div className=" w-100 navContainer ">
 
             {/* desktop view*/}
             <div className="d-none d-lg-block d-lg-flex justify-content-between ">

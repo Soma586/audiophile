@@ -147,13 +147,13 @@ const z = _.map(Data, (x) => {
   return (
     <div className="">
         
+       
         <Nav/>
-        
+
           <Routes >
             <Route path="/" element={<HomePage/>}/>
             {x}
-            {/* <Route path='/' element={<ProductDetails/>}/>  */}
-            {/* <Route path='/lo' element={<Test/>}/>  */}
+          
             <Route path="/checkout" element={<CheckoutPage/>}/>
              
           </Routes>

@@ -85,7 +85,9 @@ const CheckoutPage = () => {
 
 
   return (
+     
     <div className="container">
+      
       <div className="row gx-3">
         <div className="col-lg-8">
           <div className="checkoutDetails ">
