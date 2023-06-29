@@ -10,6 +10,8 @@ import CheckoutPage from './components/CheckoutPage';
 //import ProductDetails from './components/ProductDetails';
 import ProductPage from './pages/ProductPage';
 import Data from './data.json'
+import CategoryDetail from './components/CategoryDetail';
+import CategoryPage from './pages/CategoryPage';
 
 
 
@@ -144,14 +146,46 @@ const z = _.map(Data, (x) => {
     <img src={x.image.mobile}/>
   )
 })
+
+const y = _.map(Data, (tt, index) => {
+
+  if(index%2 !== 0){
+  return (
+    <CategoryDetail col1={2} col2={1} title={tt.name} imgLink={tt.categoryImage.desktop} isNew={tt.new} desc={tt.description}/>
+  )}else{
+    return (
+      <CategoryDetail col1={1} col2={2} title={tt.name} imgLink={tt.categoryImage.desktop} isNew={tt.new} desc={tt.description}/>
+    )
+  }
+})
+
+const filterdHeadphones = _.filter(Data, (item) => {
+
+  return item.category === 'headphones'
+})
+
+const filteredEarphones = _.filter(Data, (item) => {
+  return item.category === 'earphones'
+})
+
+const filteredSpeakers = _.filter(Data, (item) => {
+  return item.category === 'speakers'
+})
+
+console.log(Data)
   return (
     <div className="">
         
        
         <Nav/>
+        {/* <CategoryDetail col1={2} col2={1}/> */}
+        
 
           <Routes >
             <Route path="/" element={<HomePage/>}/>
+            <Route path="/category/headphones" element={<CategoryPage data={filterdHeadphones} pageTitle={"HEADPHONES"}/>}/>
+            <Route path="/category/earphones" element={<CategoryPage data={filteredEarphones} pageTitle={"EARPHONES"}/>}/>
+            <Route path="/category/speakers" element={<CategoryPage data={filteredSpeakers} pageTitle={"SPEAKERS"}/>}/>
             {x}
           
             <Route path="/checkout" element={<CheckoutPage/>}/>

@@ -24,9 +24,15 @@ const Nav = () => {
                 <Link to="/">
                 <p>HOME</p>
                 </Link>
+                <Link to="/category/headphones">
                 <p>HEADPHONES</p>
+                </Link>
+                <Link to="/category/speakers">
                 <p>SPEAKERS</p>
+                </Link>
+                <Link to="/category/earphones">
                 <p>EARPHONES</p>
+                </Link>
             </div>
             
             <Link to={"checkout"}>
