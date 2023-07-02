@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import './styles.scss'
 import myr from '../../assets/product-xx59-headphones/desktop/image-product.jpg'
 
 const ProductDetails = (props) => {
 
 
-    const {name, description, price, image } = props;
+    const {name, description, price, image, id } = props;
+
+    const [quantity, setQuantity] = useState(1)
 
     console.log(props)
     //const test = require(image.desktop)
@@ -15,7 +18,32 @@ const ProductDetails = (props) => {
     //const lol = require(x).default;
     const tt = '/assets/product-xx59-headphones/desktop/image-product.jpg'
     console.log(myr)
+    console.log(id)
     //console.log(x)
+
+    const addItemToCard = () => {
+
+
+        // if(sessionStorage.getItem){
+
+        // }
+        sessionStorage.setItem(id, quantity)
+    }
+
+
+    const increaseQuantity = () => {
+
+        if(quantity !== 9){
+            setQuantity(quantity + 1)
+        }
+    }
+
+    const decreaseQuantity = () => {
+
+        if(quantity !== 1) {
+         setQuantity(quantity - 1)
+        }
+    }
 
     return (
         <div className="container">
@@ -38,9 +66,18 @@ const ProductDetails = (props) => {
 
                         <p>$ {price}</p>
 
-                        <button>
+                        <div className="d-flex">
+                        <div className="bg-grey quantityContainer d-flex justify-content-between me-3">
+                            <button className="quantityButton" onClick={decreaseQuantity}>-</button>
+                            <span className="type__body">{quantity}</span>
+                            <button className="quantityButton"  onClick={increaseQuantity}>+</button>
+                        </div>
+                        <button onClick={addItemToCard}>
                             ADD TO CART
                         </button>
+
+                        </div>
+                    
                     
                     </div>
 

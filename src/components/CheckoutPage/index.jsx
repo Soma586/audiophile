@@ -1,27 +1,114 @@
 import { useState } from "react";
 import "./styles.scss";
+import _ from 'lodash'
+import Data from '../../data.json'
+import Test from '../../assets/product-xx59-headphones/mobile/image-product.jpg'
+
+
+
+const ItemCheck = (props) => {
+
+    const { imgLink, price, itemName, quantity } = props
+
+    return (
+        <div className="itemCheckContainer d-flex justify-content-between">
+            <div className="d-flex">
+                 <img  className="itemThumbNail" src={imgLink}/>
+                 <div className="ms-3">
+                     <p className="bufferTitle">{itemName}</p>
+                     <p className="bufferPrice">{price}</p>
+                 </div>
+            </div>
+
+            <p>x{quantity}</p>
+            
+        </div>
+    )
+}
+
+const whatsIntheCart = () => {
+
+    let cart = []
+
+    _.forEach(Data, (item) => {
+
+        if(sessionStorage.getItem(item.id)){
+            cart.push(item)
+        }
+
+        
+    })
+
+    //console.log(cart)
+    return cart
+
+}
 
 const SummaryCheck = () => {
+
+
+    const [cartItems, setCartItems] = useState(whatsIntheCart())
+
+  
+   const [grandTotal, setGrandTotal] = useState(0)
+
+    
+    const calculateTotal = () => {
+
+        let sum = 0
+
+        _.forEach(cartItems, (item) => {
+
+            sum += item.price * sessionStorage.getItem(item.id)
+
+        })
+
+        //setGrandTotal(sum + 50)
+        return sum.toLocaleString()
+    }
+
+    const [total, setTotal] = useState(calculateTotal())
+   
+
+
+    const DisplayCart = _.map(cartItems, (item) => {
+        return (
+            <ItemCheck 
+            imgLink={item.image.mobile}
+            itemName={item.name}
+            price={item.price}
+            quantity={sessionStorage.getItem(item.id)}
+
+            />
+        )
+    })
+
+
+
+
+
   return (
     <div className="summaryContainer">
       <h2 className="type__H6">SUMMARY</h2>
 
+       {DisplayCart}
+
       <div className="d-flex justify-content-between type__body">
         <p>TOTAL</p>
 
-        <p className="boldP">$ 5,396</p>
+        <p className="boldP">$ {total}</p>
       </div>
 
       <div className="d-flex justify-content-between type__body">
         <p>SHIPPING</p>
 
-        <p className="boldP">$ 50</p>
+        <p className="boldP">$ 0</p>
       </div>
 
       <div className="d-flex justify-content-between type__body">
         <p>GRAND TOTAL</p>
 
-        <p className="boldP">$ 5,396</p>
+        <p className="boldP">$ {total}</p>
       </div>
 
       <button className="checkoutButton bg-orange text-white">
@@ -83,6 +170,11 @@ const CheckoutPage = () => {
         }
     }
 
+    const checkIfAllFieldsFill = () =>{
+
+       
+    } 
+
 
   return (
      
@@ -97,7 +189,10 @@ const CheckoutPage = () => {
 
             <div className="d-md-flex  flex-wrap justify-content-between">
               <div className="inputfield mb-3">
-                <label className="type__body">Name</label>
+                  <div className="d-flex justify-content-between">
+                    <label className="type__body">Name</label>
+                    <label className="type__body error">Field required</label>
+                </div>
                 <input className="type__body" placeholder="Alexel Ward" />
               </div>
 

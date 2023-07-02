@@ -86,3 +86,20 @@ input {
     min-height: 80px;
     background-color: $black;
 }
+
+.itemThumbNail {
+    width: 64px;
+    height: 64px;
+}
+
+.itemCheckContainer {
+    max-height: 64px;
+}
+
+.bufferTitle {
+    margin-top: 10px;
+}
+
+.bufferPrice {
+    margin-top: -14px;
+}
