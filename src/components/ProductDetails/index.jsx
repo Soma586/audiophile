@@ -1,11 +1,12 @@
 import { useState } from 'react';
+import _ from 'lodash'
 import './styles.scss'
 import myr from '../../assets/product-xx59-headphones/desktop/image-product.jpg'
 
 const ProductDetails = (props) => {
 
 
-    const {name, description, price, image, id } = props;
+    const {name, description, price, image, id, features, includes } = props;
 
     const [quantity, setQuantity] = useState(1)
 
@@ -45,6 +46,17 @@ const ProductDetails = (props) => {
         }
     }
 
+
+    const including = _.map(includes, (item) => {
+
+        return (
+            <div>
+            <span className="me-3">{item.quantity}x </span>
+            <span>{item.item}</span>
+            </div>
+        )
+    })
+
     return (
         <div className="container">
             <div className="row">
@@ -80,6 +92,26 @@ const ProductDetails = (props) => {
                     
                     
                     </div>
+
+            </div>
+
+            <div className="row">
+                <div className="col-lg-8">
+                    <h2>FEATURES</h2>
+
+                    <p>
+                    {features}
+                    </p>
+                </div>
+
+                <div className="col-lg-4">
+                    <h2>IN THE BOX</h2>
+
+                    <div>
+                        {including}
+                    </div>
+
+                </div>
 
             </div>
 
