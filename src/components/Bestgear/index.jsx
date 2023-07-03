@@ -7,7 +7,7 @@ const Bestgear = () => {
 
 
     return (
-        <div className="container d-flex gearContainer">
+        <div className="container d-flex gearContainer mb-5">
 
         <div className="d-none d-lg-block">
             <div className="row">
@@ -21,8 +21,8 @@ const Bestgear = () => {
 
             
             </div>
-            <div className="col-lg-6">
-                <img  className="w-100" src={BestGear}/>
+            <div className="col-lg-6 h-100">
+                <img  className="w-100 h-100 rightImage" src={BestGear}/>
             </div>
             </div>
             </div>
