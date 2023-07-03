@@ -12,6 +12,8 @@ const Footer = () => {
 
                 {/**Desktop view */}
             <div className="container d-none d-lg-block d-lg-flex ">
+
+                <div className="row"></div>
             <div className="footerLeft">
             <h4>audiophile</h4>
 

@@ -13,10 +13,17 @@ const Nav = () => {
 
     const [displayMenu, setDisplayMenu] = useState(false)
 
+
+    const cancelMenu = () => {
+
+        setDisplayMenu(false)
+    }
+
     return(
-        <div className=" w-100 navContainer ">
+        <div className=" w-100 navContainer  ">
 
             {/* desktop view*/}
+            <div className="container">
             <div className="d-none d-lg-block d-lg-flex justify-content-between ">
             <span className="type__H6">Audiophile</span>
             
@@ -42,21 +49,31 @@ const Nav = () => {
 
             {/* tablet view */}
 
-            <div className="d-md-block d-lg-none" >
-                <div className="d-md-flex justify-content-between d-lg-none">
+            <div className="d-md-block d-md-flex justify-content-md-between  w-100 " >
+                <div className="d-flex justify-content-between wtf w-100 d-lg-none">
+                    <div className="me-4">
                 <HamburgerIcon className="test" onClick={() => setDisplayMenu(!displayMenu)}/>
-                <span className="type__H6">Audiophile</span>
+                </div>
 
+                <div>
+                    <Link to="/">
+                <span className="type__H6">Audiophile</span>
+                </Link>
+                </div>
+                
+                <Link to='/checkout'>
                 <img className="cart" src={Cart}/>
+                </Link>
                 </div>
 
                 {displayMenu && 
                 <div className="navDropDown">
                     <div>
-                        <Accessory/>
+                        <Accessory cancelMenu={cancelMenu}/>
                     </div>
                 </div>
             }
+            </div>
             </div>
 
         </div>

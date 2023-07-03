@@ -39,8 +39,9 @@
 .navDropDown {
     min-height: 340px;
     width: 100%;
-    background-color: blue;
+    background-color: white;
     position: absolute;
+    top: 76px;
     left: 0;
     z-index: 9;
     border-radius: 12px;
@@ -54,3 +55,9 @@
 // .accBuff {
 //     position: ;
 // }
+
+.wtf{
+
+    display: flex;
+    justify-content: space-between;
+}
