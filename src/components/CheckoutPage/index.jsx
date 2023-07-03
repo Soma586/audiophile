@@ -3,8 +3,8 @@ import "./styles.scss";
 import _ from 'lodash'
 import Data from '../../data.json'
 import Test from '../../assets/product-xx59-headphones/mobile/image-product.jpg'
-
-
+import ConfirmationIcon from  '../../assets/checkout/icon-order-confirmation.svg'
+import { Route ,Link } from 'react-router-dom';
 
 const ItemCheck = (props) => {
 
@@ -24,6 +24,30 @@ const ItemCheck = (props) => {
             
         </div>
     )
+}
+
+const ConfirmationBox = (props) => {
+
+
+    const { trigger, handleClick } = props
+    return trigger ? (
+        <div className="confirmationPopup">
+            <div className="confirmationInnerPopUp">
+            <img src={ConfirmationIcon}/>
+
+                <h1>THANK YOU FOR YOUR ORDER</h1>
+
+                <p>You will recieve an email confirmation shortly</p>
+
+                
+                <Link to="/">
+                <button className="addToCard w-100" onClick={handleClick} >BACK TO HOME</button>
+                </Link>
+                </div>
+
+        </div>
+    ) : null
+
 }
 
 const whatsIntheCart = () => {
@@ -51,6 +75,18 @@ const SummaryCheck = () => {
 
   
    const [grandTotal, setGrandTotal] = useState(0)
+
+   const [trigger, setTrigger] = useState(false);
+
+
+   const clearCart = () => {
+
+    
+    sessionStorage.clear()
+    //console.log("WTF")
+
+
+   }
 
     
     const calculateTotal = () => {
@@ -86,6 +122,10 @@ const SummaryCheck = () => {
 
 
 
+    const triggerPay = () => {
+      
+        setTrigger(true)
+    }
 
   return (
     <div className="summaryContainer">
@@ -111,9 +151,11 @@ const SummaryCheck = () => {
         <p className="boldP">$ {total}</p>
       </div>
 
-      <button className="checkoutButton bg-orange text-white">
+      <button className="checkoutButton bg-orange text-white" onClick={triggerPay}>
         CONTINUE & PAY
       </button>
+
+      <ConfirmationBox trigger={trigger} handleClick={clearCart}/>
     </div>
   );
 };

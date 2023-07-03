@@ -103,3 +103,35 @@ input {
 .bufferPrice {
     margin-top: -14px;
 }
+
+
+.confirmationPopup{
+    position: fixed;
+    top: 30px;
+    right: 0;
+    //width: 500px;
+    width: 100%;
+    height:  100vh;
+    background-color: rgba(0, 0,0, 0.2);
+    overflow-y: hidden;
+    z-index: 10
+}
+
+.confirmationInnerPopUp {
+
+    overflow-y: hidden;
+    width: 540px;
+    background-color: white;
+    //position: absolute;
+    position: relative;
+    //top: 100px;
+    //right: 500px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    //left: 50%;
+    border: 2px solid red;
+    padding: 40px 40px;
+    z-index: 100;
+
+}
