@@ -20,7 +20,7 @@ const Nav = () => {
     }
 
     return(
-        <div className=" w-100 navContainer  ">
+        <div className=" w-100 navContainer ">
 
             {/* desktop view*/}
             <div className="container">

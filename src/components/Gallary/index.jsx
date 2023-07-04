@@ -13,11 +13,11 @@ const Gallary = (props) => {
         <div className="col-lg-6">
           <img className="firstImgStage mb-3" src={gallery.first.desktop} />
 
-          <img className="firstImgStage" src={gallery.second.desktop} />
+          <img className="firstImgStage mb-3" src={gallery.second.desktop} />
         </div>
 
         <div className="col-lg-6">
-          <img className="w-100 h-100" src={gallery.third.desktop} />
+          <img className="w-100 h-100 mb-5 thirdGallary" src={gallery.third.desktop} />
         </div>
       </div>
     </div>

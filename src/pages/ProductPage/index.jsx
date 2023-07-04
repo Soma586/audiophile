@@ -13,7 +13,7 @@ const Suggest = (props) => {
 
     const otherItems = _.map(others, (item) => {
         return (
-        <SuggestCard title={item.name} imgLink={item.image.desktop}/>
+        <SuggestCard title={item.name} imgLink={item.image.desktop} link={item.slug}/>
         )
     })
 
@@ -38,7 +38,7 @@ const ProductPage = (props) => {
         <div>
         
         
-            <ProductDetails {...props}/>
+            <ProductDetails {...props} isnew={props.new}/>
             <Gallary gallery={props.gallery}/>
             <Suggest {...props}/>
 

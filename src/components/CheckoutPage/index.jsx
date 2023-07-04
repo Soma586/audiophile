@@ -11,16 +11,16 @@ const ItemCheck = (props) => {
     const { imgLink, price, itemName, quantity } = props
 
     return (
-        <div className="itemCheckContainer d-flex justify-content-between">
+        <div className="itemCheckContainer d-flex justify-content-between mb-3">
             <div className="d-flex">
                  <img  className="itemThumbNail" src={imgLink}/>
                  <div className="ms-3">
                      <p className="bufferTitle">{itemName}</p>
-                     <p className="bufferPrice">{price}</p>
+                     <p className="bufferPrice">$ {price.toLocaleString()}</p>
                  </div>
             </div>
 
-            <p>x{quantity}</p>
+            <p className="mt-3">x{quantity}</p>
             
         </div>
     )
@@ -128,8 +128,8 @@ const SummaryCheck = () => {
     }
 
   return (
-    <div className="summaryContainer">
-      <h2 className="type__H6">SUMMARY</h2>
+    <div className="summaryContainer ">
+      <h2 className="type__H6 mb-4">SUMMARY</h2>
 
        {DisplayCart}
 
@@ -220,7 +220,7 @@ const CheckoutPage = () => {
 
   return (
      
-    <div className="container">
+    <div className="container mt-4">
       
       <div className="row gx-3">
         <div className="col-lg-8">

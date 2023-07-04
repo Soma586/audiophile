@@ -1,8 +1,13 @@
 @import '../../scss/breakpoint.scss';
 
 .triStage {
-    height: 592px;
+    //height: 592px;
     //max-width: 1199px;
+
+
+    // @include breakpoint-lg {
+    //     max-height: 592px;
+    // }
 
 }
 
@@ -20,4 +25,15 @@
 
     
 }
+
+
+.thirdGallary {
+
+    max-height:  368px;
+    @include breakpoint-lg {
+    max-height: 576px;
+    }
+}
+
+
 

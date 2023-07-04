@@ -5,33 +5,15 @@ import myr from '../../assets/product-xx59-headphones/desktop/image-product.jpg'
 import Data from '../../data.json'
 import '../CheckoutPage/styles.scss'
 import { Route ,Link } from 'react-router-dom';
-import ConfirmationIcon from  '../../assets/checkout/icon-order-confirmation.svg'
 
 
 
 
 
 
-const ConfirmationBox = () => {
 
 
-    return (
-        <div>
-            <img src={ConfirmationIcon}/>
 
-                <h1>THANK YOU FOR YOUR ORDER</h1>
-
-                <p>You will recieve an email confirmation shortly</p>
-
-                
-                <Link to="/">
-                <button className="addToCard w-100" >BACK TO HOME</button>
-                </Link>
-
-        </div>
-    )
-
-}
 
 
 const ItemCheck = (props) => {
@@ -43,7 +25,7 @@ const ItemCheck = (props) => {
             <div className="d-flex">
                  <img  className="itemThumbNail" src={imgLink}/>
                  <div className="ms-3">
-                     <p className="bufferTitle">{itemName}</p>
+                     <p className="bufferTitle type__body">{itemName}</p>
                      <p className="bufferPrice">{price}</p>
                  </div>
             </div>
@@ -138,23 +120,13 @@ const PopupCheckOutBox = (props) => {
 const ProductDetails = (props) => {
 
 
-    const {name, description, price, image, id, features, includes } = props;
+    const {name, description, price, image, id, features, includes, isnew } = props;
 
     const [quantity, setQuantity] = useState(1)
 
     const [trigger, setTrigger] = useState(false)
     const [cartItems, setCartItems] = useState(whatsIntheCart())
 
-    console.log(props)
-    //const test = require(image.desktop)
-    //console.log(test)
-    //const x = '../.' + image.desktop
-    //const test = require('../../assets/product-xx59-headphones/desktop/image-product.jpg')
-    
-    //const lol = require(x).default;
-    const tt = '/assets/product-xx59-headphones/desktop/image-product.jpg'
-    console.log(myr)
-    console.log(id)
 
     const removeAllItems = () => {
 
@@ -199,8 +171,8 @@ const ProductDetails = (props) => {
     const including = _.map(includes, (item) => {
 
         return (
-            <div>
-            <span className="me-3">{item.quantity}x </span>
+            <div className="mb-2">
+            <span className="me-3 text-orange">{item.quantity}x </span>
             <span>{item.item}</span>
             </div>
         )
@@ -216,12 +188,16 @@ const ProductDetails = (props) => {
                     
                 </div>
 
-                <div className="col-lg-6">
-                    <p>NEW PRODUCT</p>
+                <div className="col-lg-6 productDetail">
 
-                    <h1>{name}</h1>
+                    {isnew && 
+                    <p className="overLine text-orange">NEW PRODUCT</p>
+
+                    }
+
+                    <h1 className="type__H2">{name}</h1>
                         {/* <p>{title}</p> */}
-                    <p>
+                    <p className="type__body">
                     {description}
                     </p>
 
@@ -230,10 +206,10 @@ const ProductDetails = (props) => {
                         <div className="d-flex">
                         <div className="bg-grey quantityContainer d-flex justify-content-between me-3">
                             <button className="quantityButton" onClick={decreaseQuantity}>-</button>
-                            <span className="type__body">{quantity}</span>
+                            <span className="type__body quantityBuffer">{quantity}</span>
                             <button className="quantityButton"  onClick={increaseQuantity}>+</button>
                         </div>
-                        <button onClick={addItemToCard}>
+                        <button className="addToCard bg-orange text-white" onClick={addItemToCard}>
                             ADD TO CART
                         </button>
                         <PopupCheckOutBox 
@@ -250,17 +226,17 @@ const ProductDetails = (props) => {
 
             </div>
 
-            <div className="row">
-                <div className="col-lg-8">
-                    <h2>FEATURES</h2>
+            <div className="row mt-5 mb-5">
+                <div className="col-lg-8 pe-5">
+                    <h2 className="type__H3">FEATURES</h2>
 
-                    <p>
+                    <p className="type__body">
                     {features}
                     </p>
                 </div>
 
                 <div className="col-lg-4">
-                    <h2>IN THE BOX</h2>
+                    <h2 className="type__H3">IN THE BOX</h2>
 
                     <div>
                         {including}
