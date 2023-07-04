@@ -27,6 +27,15 @@
 .navList {
 
     width: 480px;
+    text-decoration: none;
+
+    a {
+        text-decoration: none;
+        color:$white;
+    }
+    a:hover {
+        color: $orange
+    }
 
 }
 

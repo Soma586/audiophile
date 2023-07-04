@@ -10,7 +10,7 @@ const CallToAction = (props) => {
         textcolor = 'white'
     } = props;
     return (
-        <button className={classNames(`bg-${bgcolor} ctaContainer text-${textcolor}`)} >
+        <button className={classNames(bgcolor === 'orange' ? 'orangeColor' : 'greyColor', `ctaContainer `)} >
             SEE PRODUCT
         </button>
     )

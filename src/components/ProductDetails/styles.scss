@@ -41,7 +41,12 @@
 
 
 .productDetail {
-    padding-top: 120px;
+
+    padding-top: 80px;
+
+    @include breakpoint-lg {
+        padding-top: 120px;
+    }
 }
 
 .quantityBuffer {

@@ -1,4 +1,5 @@
 @import '../../scss/breakpoint.scss';
+@import '../../scss/colors.scss';
 
 .footerContainer {
     padding-top: 50px;
@@ -13,6 +14,7 @@
 .footerRight {
     // width: 50%;
     position: relative;
+    height: 100%;
 }
 
 .footDesc {
@@ -21,19 +23,33 @@
 
 .iconContainer {
 
-    font-size: 24px;
+    font-size: 18px;
     
     width: 150px;
     margin: auto;
+    margin-top: 4px;
 
     @include breakpoint-lg {
+    font-size: 24px;
     position: absolute;
-    bottom: 30px;
+    bottom: 16px;
     right: 0;
     width: 100px;
     margin: 0;
     }
 
+}
+
+.navList {
+    //text-decoration: none;
+
+    a {
+        text-decoration: none;
+        color:$white;
+    }
+    a:hover {
+        color: $orange
+    }
 }
 
 .mobileFoot {
@@ -47,4 +63,8 @@
 
 .buff {
     margin: auto
+}
+
+.rightBuff {
+    position: relative;
 }

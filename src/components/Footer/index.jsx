@@ -2,6 +2,8 @@ import './styles.scss'
 import { FaGithub } from 'react-icons/fa'
 import { FaFacebook } from 'react-icons/fa'
 import { FaInstagram } from 'react-icons/fa'
+import { FaLinkedin } from 'react-icons/fa'
+import { Route ,Link } from 'react-router-dom'
 
 const Footer = () => {
 
@@ -27,20 +29,34 @@ const Footer = () => {
             </div>
             </div>
 
-<div className="col-lg-6">
+<div className="col-lg-6 rightBuff">
             <div className="footerRight">
             
             <div className="d-flex justify-content-between type__H6 navList">
+                <Link to="/">
                 <p>HOME</p>
+                </Link>
+                <Link to='/category/headphones'>
                 <p>HEADPHONES</p>
+                </Link>
+                <Link to='/category/speakers'>
                 <p>SPEAKERS</p>
+                </Link>
+                <Link to='/category/earphones'>
                 <p>EARPHONES</p>
+                </Link>
             </div>
             
             <div className="iconContainer d-flex justify-content-between">
+            <a href="https://github.com/Soma586">
                 <FaGithub/>
-                <FaFacebook/>
+                </a>
+                <a href="https://www.linkedin.com/in/tarikm35/">
+                <FaLinkedin/>
+                </a>
+                <a href="https://github.com/Soma586/audiophile">
                 <FaInstagram/>
+                </a>
             </div>
             </div>
                 
@@ -50,13 +66,21 @@ const Footer = () => {
 
                 {/**Tablet and lower */}
             <div className=" container d-lg-none mobileFoot">
-                <h4 className="mb-5">Audiopphile</h4>
+                <h4 className="mb-5">audiophile</h4>
 
                 <div className="d-sm-flex justify-content-between type__H6 navList mb-5 buff w-100">
+                <Link to="/">
                 <p>HOME</p>
+                </Link>
+                <Link to='/category/headphones'>
                 <p>HEADPHONES</p>
+                </Link>
+                <Link to='/category/speakers'>
                 <p>SPEAKERS</p>
+                </Link>
+                <Link to='/category/earphones'>
                 <p>EARPHONES</p>
+                </Link>
 
               
             </div>
@@ -68,9 +92,15 @@ const Footer = () => {
                 <p className="type__body">Copyright 2021. All Rights Reserved</p>
 
                 <div className="iconContainer d-flex justify-content-between">
+                <a href="https://github.com/Soma586">
                 <FaGithub/>
-                <FaFacebook/>
+                </a>
+                <a href="https://www.linkedin.com/in/tarikm35/">
+                <FaLinkedin/>
+                </a>
+                <a href="https://github.com/Soma586/audiophile">
                 <FaInstagram/>
+                </a>
                 </div>
                 
             </div>

@@ -1,8 +1,36 @@
 
+@import '../../scss/colors.scss';
 
 .ctaContainer {
     border-style: none;
 
-    padding: 8px 30px
+    padding: 8px 30px;
+    //background-color: $orange;
 
+}
+
+.orangeColor{
+    background-color: $orange;
+    color: $white;
+}
+
+.orangeColor:hover{
+    background-color: #FBAF85;
+}
+
+// .ctaContainer:hover {
+
+//     background-color: #FBAF85;
+// }
+
+.greyColor{
+    background-color: $white;
+    border: solid 1px $black;
+    color: $black 
+    
+}
+
+.greyColor:hover {
+    background-color: $black;
+    color: $white;
 }

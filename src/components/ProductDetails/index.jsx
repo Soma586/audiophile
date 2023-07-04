@@ -179,7 +179,7 @@ const ProductDetails = (props) => {
     })
 
     return (
-        <div className="container">
+        <div className="container mt-4">
             <div className="row">
                 <div className="col-lg-6">
                     <img className="w-100" src={image.desktop} alt="image"/>

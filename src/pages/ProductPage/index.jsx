@@ -18,7 +18,7 @@ const Suggest = (props) => {
     })
 
     return (
-        <div className="container">
+        <div className="container mt-5 mb-5">
             <div className="d-lg-flex justify-content-between">
             {otherItems}
             </div>
