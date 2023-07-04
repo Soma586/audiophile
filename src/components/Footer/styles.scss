@@ -6,16 +6,17 @@
 }
 
 .footerLeft {
-    width: 50%;
+    // width: 50%;
+    padding-right: 50px;
 }
 
 .footerRight {
-    width: 50%;
+    // width: 50%;
     position: relative;
 }
 
 .footDesc {
-    width: 540px;
+    //width: 540px;
 }
 
 .iconContainer {
@@ -42,4 +43,8 @@
 
 .iconSize {
     font-size: 24px;
+}
+
+.buff {
+    margin: auto
 }

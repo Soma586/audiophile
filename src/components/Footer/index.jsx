@@ -12,6 +12,10 @@ const Footer = () => {
 
                 {/**Desktop view */}
             <div className="container d-none d-lg-block d-lg-flex ">
+
+                <div className="row">
+
+                <div className="col-lg-6">
             <div className="footerLeft">
             <h4>audiophile</h4>
 
@@ -21,7 +25,9 @@ const Footer = () => {
 
             <p className="type__body">Copyright 2021. All Rights Reserved</p>
             </div>
+            </div>
 
+<div className="col-lg-6">
             <div className="footerRight">
             
             <div className="d-flex justify-content-between type__H6 navList">
@@ -36,7 +42,9 @@ const Footer = () => {
                 <FaFacebook/>
                 <FaInstagram/>
             </div>
+            </div>
                 
+            </div>
             </div>
             </div>
 
@@ -44,7 +52,7 @@ const Footer = () => {
             <div className="d-lg-none mobileFoot">
                 <h4 className="mb-5">Audiopphile</h4>
 
-                <div className="d-sm-flex justify-content-between type__H6 navList mb-5">
+                <div className="d-sm-flex justify-content-between type__H6 navList mb-5 buff">
                 <p>HOME</p>
                 <p>HEADPHONES</p>
                 <p>SPEAKERS</p>
