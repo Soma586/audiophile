@@ -7,7 +7,7 @@ const Bestgear = () => {
 
 
     return (
-        <div className="container d-flex gearContainer mt-5 mb-5">
+        <div className="container d-flex gearContainer mt-5 mb-5 bottomBuffer">
 
         <div className="d-none d-lg-block">
             <div className="row">

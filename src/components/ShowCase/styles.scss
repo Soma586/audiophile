@@ -85,7 +85,7 @@
 }
 
 .firstDesc {
-  width: 349px;
+  //width: 349px;
   height: 303px;
   position: absolute;
   bottom: 0;
@@ -96,6 +96,11 @@
   margin-top: 190px;
 
   text-align: center;
+
+
+  @include breakpoint-md {
+      width: 349px;
+  }
 
   @include breakpoint-lg {
     // position: relative;

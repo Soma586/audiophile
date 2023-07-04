@@ -52,7 +52,7 @@ const Footer = () => {
             <div className="d-lg-none mobileFoot">
                 <h4 className="mb-5">Audiopphile</h4>
 
-                <div className="d-sm-flex justify-content-between type__H6 navList mb-5 buff">
+                <div className="d-sm-flex justify-content-between type__H6 navList mb-5 buff w-100">
                 <p>HOME</p>
                 <p>HEADPHONES</p>
                 <p>SPEAKERS</p>

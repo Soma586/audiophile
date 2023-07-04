@@ -3,10 +3,17 @@
 
 .type__H1 {
 
+
     font-family: 'Manrope-Bold';
-    font-size: 56px;
-    line-height: 58px;
+    font-size: 40px;
+    line-height: 42px;
     letter-spacing: 2px;
+
+
+    @include breakpoint-md {
+        font-size:  56px;
+        line-height: 58px;
+    }
 }
 
 
