@@ -52,6 +52,7 @@
     width: 100%;
     z-index:10;
     border-radius: 4px;
+    padding: 40px 20px;
 
     @include breakpoint-md {
     width: 377px;
@@ -61,7 +62,7 @@
     top: 100px;
     right: 30px;
     //border: 2px solid red;
-    padding: 40px 20px;
+    
     z-index: 10;
 
     }
