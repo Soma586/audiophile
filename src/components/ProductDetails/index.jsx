@@ -21,16 +21,16 @@ const ItemCheck = (props) => {
     const { imgLink, price, itemName, quantity } = props
 
     return (
-        <div className="itemCheckContainer d-flex justify-content-between">
+        <div className="itemCheckContainer d-flex justify-content-between mb-4">
             <div className="d-flex">
                  <img  className="itemThumbNail" src={imgLink}/>
                  <div className="ms-3">
                      <p className="bufferTitle type__body">{itemName}</p>
-                     <p className="bufferPrice">{price}</p>
+                     <p className="bufferPrice">$ {(price * quantity).toLocaleString()}</p>
                  </div>
             </div>
 
-            <p>x{quantity}</p>
+            <p className="mt-3">x{quantity}</p>
             
         </div>
     )
@@ -86,8 +86,8 @@ const PopupCheckOutBox = (props) => {
 
     return  trigger ? (
         <div className="popup" >
-            <div className="innerpopUp">
-                <div className="d-flex justify-content-between">
+            <div className="   innerpopUp">
+                <div className="d-flex justify-content-between mb-3">
                     <h4>CART ({cart.length}) </h4>
                     <button onClick={handleRemove}>Remove all </button>
                 </div>
@@ -96,11 +96,6 @@ const PopupCheckOutBox = (props) => {
 
                 {DisplayCart}
 
-
-                <div>
-                    <p>TOTAL</p>
-
-                </div>
 
             
                 <button className="addToCard w-100 mb-3" onClick={handleClick}> CONTINUE SHOPPING</button>
@@ -139,10 +134,13 @@ const ProductDetails = (props) => {
     const addItemToCard = () => {
 
 
-        // if(sessionStorage.getItem){
-
-        // }
-        sessionStorage.setItem(id, quantity)
+        if(sessionStorage.getItem(id)){
+            sessionStorage.setItem(id,  +sessionStorage.getItem(id) + quantity)
+           
+        }else{
+            sessionStorage.setItem(id, quantity)
+        }
+        
         setCartItems(whatsIntheCart())
 
         setTrigger(true)
@@ -179,6 +177,7 @@ const ProductDetails = (props) => {
     })
 
     return (
+        
         <div className="container mt-4">
             <div className="row">
                 <div className="col-lg-6">
@@ -227,7 +226,7 @@ const ProductDetails = (props) => {
             </div>
 
             <div className="row mt-5 mb-5">
-                <div className="col-lg-8 pe-5">
+                <div className="col-lg-8 pe-5 mb-5">
                     <h2 className="type__H3">FEATURES</h2>
 
                     <p className="type__body">
@@ -248,6 +247,7 @@ const ProductDetails = (props) => {
 
 
         </div>
+       
     )
 }
 

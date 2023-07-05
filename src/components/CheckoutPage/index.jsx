@@ -16,7 +16,7 @@ const ItemCheck = (props) => {
                  <img  className="itemThumbNail" src={imgLink}/>
                  <div className="ms-3">
                      <p className="bufferTitle">{itemName}</p>
-                     <p className="bufferPrice">$ {price.toLocaleString()}</p>
+                     <p className="bufferPrice">$ {(price * quantity).toLocaleString()}</p>
                  </div>
             </div>
 
@@ -33,11 +33,11 @@ const ConfirmationBox = (props) => {
     return trigger ? (
         <div className="confirmationPopup">
             <div className="confirmationInnerPopUp">
-            <img src={ConfirmationIcon}/>
+            <img className="mb-4" src={ConfirmationIcon}/>
 
                 <h1>THANK YOU FOR YOUR ORDER</h1>
 
-                <p>You will recieve an email confirmation shortly</p>
+                <p className="mb-5">You will recieve an email confirmation shortly</p>
 
                 
                 <Link to="/">
@@ -83,8 +83,6 @@ const SummaryCheck = () => {
 
     
     sessionStorage.clear()
-    //console.log("WTF")
-
 
    }
 
@@ -99,7 +97,6 @@ const SummaryCheck = () => {
 
         })
 
-        //setGrandTotal(sum + 50)
         return sum.toLocaleString()
     }
 
@@ -123,12 +120,30 @@ const SummaryCheck = () => {
 
 
     const triggerPay = () => {
+
+        const check = document.querySelectorAll('input')
+
+        let clearToComplete = true
+
+        for(let i = 0; i < check.length; i++){
+            //console.log(check[i])
+            if(check[i].value === ""){
+                //console.log("i don't have a value")
+                //check[i].value = 'trest'
+                check[i].style.borderColor= "red"
+                clearToComplete = false
+            }
+        }
       
-        setTrigger(true)
+        if(clearToComplete) {
+            setTrigger(true)
+        }
     }
 
+
+
   return (
-    <div className="summaryContainer ">
+    <div className="summaryContainer bg-white ">
       <h2 className="type__H6 mb-4">SUMMARY</h2>
 
        {DisplayCart}
@@ -151,9 +166,13 @@ const SummaryCheck = () => {
         <p className="boldP">$ {total}</p>
       </div>
 
+
+        {!_.isEmpty(cartItems) &&
       <button className="checkoutButton bg-orange text-white" onClick={triggerPay}>
         CONTINUE & PAY
-      </button>
+      </button> 
+      
+    }
 
       <ConfirmationBox trigger={trigger} handleClick={clearCart}/>
     </div>
@@ -166,9 +185,6 @@ const CheckoutPage = () => {
     const [emailValue,  setEmail] = useState('')
     const [isValidEmail, setValidEmail] = useState(true)
     const [num, setnum] = useState('')
-
-    console.log("checking session")
-    console.log(sessionStorage.getItem('pimp'))
 
 
     const handleEmailChange = (event) => {
@@ -195,7 +211,6 @@ const CheckoutPage = () => {
 
     const phone = (event) => {
 
-        console.log(event.target.value)
         setnum(event.target.value)
     }
 
@@ -212,19 +227,16 @@ const CheckoutPage = () => {
         }
     }
 
-    const checkIfAllFieldsFill = () =>{
-
-       
-    } 
-
 
   return (
      
-    <div className="container mt-4">
+
+    <div className="container-fluid bg-grey pt-4"> 
+    <div className="container  ">
       
       <div className="row gx-3">
         <div className="col-lg-8">
-          <div className="checkoutDetails ">
+          <div className="checkoutDetails bg-white">
             <h2 className="type__H3">CHECKOUT</h2>
 
             <p className="subTitle text-orange">BILLING DETAILS</p>
@@ -258,6 +270,8 @@ const CheckoutPage = () => {
               <div className="inputfield mb-3">
                 <label className="type__body">Phone Number</label>
                 <input className="type__body" 
+                type="number"
+                onWheel={(e) => e.target.blur()}
                 placeholder="+1 202 555-0136" 
                 onChange={phone}
                 value={num}
@@ -274,7 +288,11 @@ const CheckoutPage = () => {
             <div className="d-md-flex  flex-wrap justify-content-between ">
               <div className="inputfield mb-3">
                 <label className="type__body">ZIP Code</label>
-                <input className="type__body" type="number" placeholder="10011" />
+                <input className="type__body" 
+                type="number" 
+                placeholder="10011" 
+                onWheel={(e) => e.target.blur()}
+                />
               </div>
 
               <div className="inputfield mb-3">
@@ -294,6 +312,7 @@ const CheckoutPage = () => {
           <SummaryCheck />
         </div>
       </div>
+    </div>
     </div>
   );
 };

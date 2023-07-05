@@ -9,8 +9,6 @@ const Suggest = (props) => {
 
     const { others } = props
 
-    console.log(others)
-
     const otherItems = _.map(others, (item) => {
         return (
         <SuggestCard title={item.name} imgLink={item.image.desktop} link={item.slug}/>
@@ -22,9 +20,6 @@ const Suggest = (props) => {
             <div className="d-lg-flex justify-content-between">
             {otherItems}
             </div>
-          
-
-
         </div>
     )
 }
