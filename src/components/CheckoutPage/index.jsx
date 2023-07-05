@@ -63,12 +63,13 @@ const whatsIntheCart = () => {
         
     })
 
-    //console.log(cart)
     return cart
 
 }
 
-const SummaryCheck = () => {
+const SummaryCheck = (props) => {
+
+    const { isValidEmail } = props
 
 
     const [cartItems, setCartItems] = useState(whatsIntheCart())
@@ -126,16 +127,15 @@ const SummaryCheck = () => {
         let clearToComplete = true
 
         for(let i = 0; i < check.length; i++){
-            //console.log(check[i])
+        
             if(check[i].value === ""){
-                //console.log("i don't have a value")
-                //check[i].value = 'trest'
+                
                 check[i].style.borderColor= "red"
                 clearToComplete = false
             }
         }
       
-        if(clearToComplete) {
+        if(clearToComplete && isValidEmail) {
             setTrigger(true)
         }
     }
@@ -143,7 +143,7 @@ const SummaryCheck = () => {
 
 
   return (
-    <div className="summaryContainer bg-white ">
+    <div className="summaryContainer bg-white mb-4">
       <h2 className="type__H6 mb-4">SUMMARY</h2>
 
        {DisplayCart}
@@ -220,9 +220,6 @@ const CheckoutPage = () => {
 
         if(emailValue !== ''){
 
-            // if(!valideEmail(emailValue)){
-            //     console.log("not a valid email")
-            // }
             setValidEmail(valideEmail(emailValue))
         }
     }
@@ -245,7 +242,7 @@ const CheckoutPage = () => {
               <div className="inputfield mb-3">
                   <div className="d-flex justify-content-between">
                     <label className="type__body">Name</label>
-                    <label className="type__body error">Field required</label>
+                    {/* <label className="type__body error">Field required</label> */}
                 </div>
                 <input className="type__body" placeholder="Alexel Ward" />
               </div>
@@ -309,7 +306,7 @@ const CheckoutPage = () => {
         </div>
 
         <div className="col-lg-4">
-          <SummaryCheck />
+          <SummaryCheck isValidEmail={isValidEmail}/>
         </div>
       </div>
     </div>

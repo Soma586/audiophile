@@ -23,7 +23,7 @@ const CategoryPage = (props) => {
     return (
         <div>
             <div className="container-fluid bg-black categoryHeader">
-                <h1 className="text-white">
+                <h1 className="text-white type__H3 ">
                     {pageTitle}
                 </h1>
             </div>

@@ -51,7 +51,6 @@ const whatsIntheCart = () => {
         
     })
 
-    //console.log(cart)
     return cart
 
 }
@@ -61,9 +60,6 @@ const PopupCheckOutBox = (props) => {
 
     const {trigger, handleClick, cart, handleRemove} = props
 
-    
-
-    //const Total = useSta
 
     const DisplayCart = _.map(cart, (item) => {
         return (
@@ -81,7 +77,7 @@ const PopupCheckOutBox = (props) => {
     const removeItems = () => {
 
         sessionStorage.clear()
-        //setCartItems([])
+       
     }
 
     return  trigger ? (
@@ -129,7 +125,6 @@ const ProductDetails = (props) => {
         setCartItems([])
 
     }
-    //console.log(x)
 
     const addItemToCard = () => {
 
@@ -208,7 +203,7 @@ const ProductDetails = (props) => {
                             <span className="type__body quantityBuffer">{quantity}</span>
                             <button className="quantityButton"  onClick={increaseQuantity}>+</button>
                         </div>
-                        <button className="addToCard bg-orange text-white" onClick={addItemToCard}>
+                        <button className="addToCard text-white" onClick={addItemToCard}>
                             ADD TO CART
                         </button>
                         <PopupCheckOutBox 

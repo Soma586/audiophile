@@ -73,3 +73,12 @@
     // right: 88px
     margin-top: -20px;
 }
+
+.accButton {
+    border-style: none;
+    color: $black;
+}
+
+.accButton:hover {
+    color: $orange;
+}

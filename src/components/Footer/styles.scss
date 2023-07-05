@@ -38,6 +38,15 @@
     margin: 0;
     }
 
+
+    a {
+        color: white;
+    }
+
+    a:hover {
+        color: $orange;
+    }
+
 }
 
 .navList {

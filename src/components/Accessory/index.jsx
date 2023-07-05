@@ -17,7 +17,7 @@ const AccessoryCard = (props) => {
         <p className="type__H5 text-black">{title}</p>
         
         <Link to={link} onClick={handleMenu} >
-        <button  className="subTitle text-black">SHOP</button>
+        <button  className="subTitle accButton ">SHOP</button>
         </Link>
         </div>
         </div>

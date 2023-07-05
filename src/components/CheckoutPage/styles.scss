@@ -108,7 +108,7 @@ input {
 
 .confirmationPopup{
     position: fixed;
-    top: 30px;
+    top: 0;
     right: 0;
     //width: 500px;
     width: 100%;
@@ -121,7 +121,7 @@ input {
 .confirmationInnerPopUp {
 
     //overflow-y: hidden;
-    width: 540px;
+    
     background-color: white;
     //position: absolute;
     position: relative;
@@ -129,11 +129,17 @@ input {
     //right: 500px;
     left: 0;
     right: 0;
+    top: 40px;
     margin: auto;
     border-radius: 4px;
     //left: 50%;
     //border: 2px solid red;
     padding: 40px 40px;
     z-index: 100;
+    width: 100%;
+
+    @include breakpoint-md {
+        width: 540px;
+    }
 
 }

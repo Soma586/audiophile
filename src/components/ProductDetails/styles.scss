@@ -1,10 +1,16 @@
 @import '../../scss/breakpoint.scss';
+@import '../../scss/colors.scss';
 
 .addToCard {
     border-style: none;
 
+    background-color: $orange;
     padding: 8px 30px
 
+}
+
+.addToCard:hover {
+    background-color: $lightorange;
 }
 
 .quantityContainer{

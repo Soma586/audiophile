@@ -11,7 +11,7 @@ const CategoryDetail = (props) => {
 
     //console.log(imgLink)
     return (
-        <div className="container catergoryContainer ">
+        <div className="container catergoryContainer mt-4 ">
             <div className="d-none d-lg-block">
             <div className="row">
                 <div className={classNames(`col-lg-6 order-${col1}`)}>
@@ -20,7 +20,7 @@ const CategoryDetail = (props) => {
                 <div className={classNames(`col-lg-6 order-${col2}`)}>
                         <div className="categoryDetails ">
 
-                            {isNew && <p>NEW PRODUCT</p>}
+                            {isNew && <p className="overLine text-orange">NEW PRODUCT</p>}
                         <h2>{title}</h2>
 
                         <p>{desc}</p>

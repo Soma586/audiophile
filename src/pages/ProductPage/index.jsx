@@ -26,9 +26,6 @@ const Suggest = (props) => {
 
 const ProductPage = (props) => {
 
-    console.log("i'm on the product page")
-
-
     return (
         <div>
         
